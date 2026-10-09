@@ -1,5 +1,7 @@
 import Database from 'better-sqlite3';
 import { randomBytes } from 'node:crypto';
+import { mkdirSync } from 'node:fs';
+import { dirname } from 'node:path';
 import { PRESETS, StrategySchema, type Strategy } from '../strategy.js';
 import type { DecisionDTO } from '../types.js';
 
@@ -69,6 +71,8 @@ export class Store {
   db: Database.Database;
 
   constructor(path: string) {
+    // e.g. DATABASE_PATH=/data/sift.db on a fresh volume
+    if (path !== ':memory:') mkdirSync(dirname(path), { recursive: true });
     this.db = new Database(path);
     this.db.pragma('journal_mode = WAL');
     this.db.exec(`

@@ -20,6 +20,8 @@ npm start                   # http://localhost:8787
 
 Open http://localhost:8787, press **Meet your agent**, sign in with any browser wallet, press the switch to start the agent. It paper-trades a simulated Pons market so you can see the whole product working.
 
+To deploy on Railway, see [DEPLOY.md](DEPLOY.md).
+
 Tests:
 
 ```bash
