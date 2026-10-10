@@ -119,6 +119,14 @@ LIVE_TRADING_ENABLED=true
 
 Watch the agent key's ETH balance; it pays gas for every live trade.
 
+## Website only: GitHub Pages (demo, no server)
+
+`.github/workflows/pages.yml` publishes `web/` to GitHub Pages on every push to `main` that changes `web/`. With no server behind it, the site runs its browser-only demo (simulated market, nothing saved on a server).
+
+One-time setup: on GitHub open **fourtisf/sift → Settings → Pages**, set **Source** to **GitHub Actions**. Then open **Actions → Deploy website to GitHub Pages → Run workflow**. The site appears at `https://fourtisf.github.io/sift/`.
+
+For real wallet sign-in, saved paper trades and live chain data, use the Railway deploy above.
+
 ---
 
 ## Building and running the image yourself
